@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Requests</title>
+    <style>
+        /* Add your CSS styles here */
+        /* table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        } */
+    </style>
+    <link rel="stylesheet" href="../static/culb_stye.css">
+</head>
+<body>
+    <h1>Club Requests</h1>
+    <div class="container">
+        <canvas id="background-canvas"></canvas>
+        {% if club_requests %}
+            <table id="req_table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Club Name</th>
+                        <th>Subject</th>
+                        <th>Description</th>
+                        <th>Money</th>
+                        <th>Approval Chain</th>
+                        <th>Current</th>
+                        <th>Approval</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for request in club_requests %}
+                        <tr class="nr">
+                            <td><input type="checkbox" class="sel_ip"></td>
+                            <td>{{ request.id }}</td>
+                            <td>{{ request.club_name }}</td>
+                            <td>{{ request.subject }}</td>
+                            <td>{{ request.description }}</td>
+                            <td>{{ request.money }}</td>
+                            <td>{{ request.approval_chain }}</td>
+                            <td>{{ request.curent }}</td>
+                            <td>{{ request.approval }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="buttons">
+                <button id="accept">Accept</button>
+                <button id="reject">Reject</button>
+                <button id="down_btn">Download Attachment</button>
+            </div>
+            
+        {% else %}
+            <p>No club requests found.</p>
+        {% endif %}
+    </div>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const checkboxes = document.querySelectorAll('.sel_ip');
+    const downloadButton = document.getElementById('down_btn');
+    downloadButton.addEventListener('click', function() {
+        const selectedCheckboxes = document.querySelectorAll('.sel_ip:checked');
+        if (selectedCheckboxes.length === 1) {
+            const requestId = selectedCheckboxes[0].closest('tr').querySelector('td:nth-child(2)').textContent;
+            window.location.href = `/download_pdf/${requestId}`;
+        } else {
+            alert('Please select exactly one request to download the attachment.');
+        }
+    });
+});
+    </script>
+    <script src="../static/particle.js"></script>
+</body>
+</html>

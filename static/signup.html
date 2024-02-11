@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="static/signup_style.css">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <div class="container">
+        <div class="header">
+            <h1>IIT Mandi Gymkhana</h1>
+            <h3>Enter your Credentials</h3>
+        </div>
+        
+        <form id="signup-form" action="/create_account" method="POST">
+            <div class="position">
+                <label for="pos">Position: </label>
+                <select id="pos" name="pos"> <!-- Removed 'value="none"' -->
+                    <option value="c_mem">Club Member</option>
+                    <option value="c_sec">Club Secretary</option>
+                    <option value="c_fa">Club FA</option>
+                    <option value="s_fa">Society FA</option>
+                    <option value="chairSAP">Chair SAP</option>
+                    <option value="dean_std">Dean Students</option>
+                </select>
+            </div>
+            <div class="inin">
+                <input type="text" name="username" required placeholder="Username">
+                <br>
+                <input type="password" name="password" required placeholder="Password">
+                <br>
+                <input type="password" name="pin" required placeholder="P  I  N">
+                <br>
+                <input type="password" name="key" required placeholder="Verification Key">
+                <br>
+                <input type="text" name="society" placeholder="Society">
+                <br>
+                <!-- <div id="changeable"></div> -->
+                <button type="submit">Create Account</button> <!-- Modified button type to 'submit' -->
+            </div>
+        </form> <!-- Added form closing tag -->
+        <p><a href="login.html">Already have an account? </a></p>
+    </div>
+    <script src="static/particle.js"></script>
+    <script src="static/position_change.js"></script>
+</body>
+</html>
