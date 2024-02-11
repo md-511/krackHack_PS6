@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <link rel="stylesheet" href="static/signup_style.css">
+    <link rel="stylesheet" href="static/diff.css">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <div class="container">
+        <div class="header">
+            <h1>IIT Mandi Gymkhana</h1>
+            <h3>Enter your login credentials</h3>
+        </div> 
+        <div class="inin">
+            <form action="{{ url_for('authenticate') }}" method="post">
+                <input class="Username" type="text" 
+                    id="first"
+                    name="username" 
+                    placeholder="Enter your Username"> 
+
+                <input class="Password" type="password"
+                    id="password" 
+                    name="password" 
+                    placeholder="Enter your Password"> 
+
+                <button class="b1" type="submit">Submit</button> 
+            </form>
+        </div>
+        <p>Not registered? <form action="{{ url_for('sign_up') }}" method="post">
+            <button id="create", type="submit">Create Account</button>
+        </form></p>
+    </div>
+    <script src="static/particle.js"></script>  
+</body>
+</html>
+

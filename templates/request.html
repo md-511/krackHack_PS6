@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Request</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/req_style.css">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <div class="container">
+        <img src="static/assets/gymkhana.png" id="logo">
+        <div class="header">
+            <!-- <h2 id="logo">Gymkhana</h1> -->
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Activities</a></li>
+                <li><a href="">Members</a></li>
+            </ul>
+        </div>
+        <form method="post" id="form" enctype="multipart/form-data" action="/upload_request">
+            <input type="text" name="club_name" placeholder="Club Name">
+            <br>
+            <input type="text" name="subject" placeholder="Subject">
+            <br>
+            <input type="number" placeholder="Enter Ammount" min="0" name="money">
+            <br>
+            <textarea name="description" placeholder="Description..." rows="5" cols="75"></textarea>
+            <br>
+            <input type="file" name="attachment" accept=".pdf">
+            <button type="submit">Make Request</button>
+        </form>
+    </div>
+    <script src="static/particle.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Request Attachment</title>
+</head>
+<body>
+    <h1>Download Request Attachment</h1>
+    <form action="{{ url_for('download_pdf', request_id='2') }}" method="GET">
+        <label for="request_id">Enter Request Number:</label>
+        <input type="number" id="request_id" name="request_id" placeholder="Enter request ID" required>
+        <button type="submit" onclick="change_action()">Download Attachment</button>
+    </form>
+    <script src="../static/req.js">
+    </script>
+</body>
+</html>

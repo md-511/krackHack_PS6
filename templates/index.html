@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymkhana</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="background-canvas"></canvas>
+        <img src="static/assets/gymkhana.png" id="logo">
+        <div class="header">
+            <!-- <h2 id="logo">Gymkhana</h1> -->
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Activities</a></li>
+                <li><a href="">Members</a></li>
+                <li>
+                    <form action="{{ url_for('login') }}" method="post">
+                        <button id="sign" type="submit">Sign In</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="main-body">
+            <h1>
+                Gymkhana
+            </h1>
+        </div>
+        <div class="buttons">
+            <form action="{{ url_for('requestx') }}" method="post">
+                <button id="make_req", type="submit">Make Request</button>
+            </form>
+            <form action="{{ url_for('print_club_requests') }}" method="post">
+                <button id="monitor_req">Monitor Request</button>
+            </form>
+        </div>
+    </div>
+    <script src="static/particle.js"></script>
+</body>
+</html>
