@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+* {
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+}
+
+body {
+    overflow: hidden;
+    background-color: #111;
+}
+
+canvas {
+    position: absolute;
+    z-index: -1;
+}
+
+.container {
+    border: 2px solid rgb(244, 97, 100);
+    width: 500px;
+    height: 550px;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+}
+
+.header {
+    letter-spacing: 2px;
+    /* text-transform: uppercase; */
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.header h3 {
+    font-size: 20px;
+}
+
+select, select option {
+    color: #222;
+    background-color: rgb(244, 97, 100);
+}
+
+.position {
+    text-align: center;
+    /* opacity: 0; */
+}
+
+.inin input, .inin button {
+    color: #222;
+    text-align: center;
+    margin: 10px 0px;
+    width: 300px;
+    height: 32px;
+    font-size: 18px;
+    font-weight: 400;
+    transform: translateX(100px);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 5px rgb(244, 97, 100);
+    transition: all 0.15s ease-out;
+}
+
+.inin button {
+    margin-top: 40px;
+    box-shadow: none;
+    background-color: rgb(244, 97, 100);
+    height: 35px;
+    letter-spacing: 3px;
+    /* text-transform: uppercase; */
+}
+
+
+.inin button:hover {
+    color: rgb(244, 97, 100);
+    background-color: #222;
+    border: 1px solid rgb(244, 97, 100);
+    cursor: pointer;
+}
+
+.inin input:active, .inin button:active {
+    transform: translateX(100px) scale(0.98);
+}
+
+p {
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
