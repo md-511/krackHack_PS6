@@ -1,1 +1,1 @@
-# krackHack_PS6
+This web app allows user to generate requests and other users who are higher in the hierarchy can then resolve it or escalate the request higher. Once the request gets processed then a pdf (containing the details) is saved as a record.
